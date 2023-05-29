@@ -17,6 +17,9 @@ while($aux = mysqli_fetch_assoc($query)) {
  $funcao =$aux["funcao"];
 
 };
+date_default_timezone_set('America/Sao_Paulo');
+$date = date('d/m-H:i');
+
 ?>
 <head>
   <meta charset="utf-8">
@@ -57,7 +60,7 @@ while($aux = mysqli_fetch_assoc($query)) {
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">PLENO</span>
+        <span class="d-none d-lg-block"><?php echo $date;?></span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -400,13 +403,13 @@ while($aux = mysqli_fetch_assoc($query)) {
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+        <i class="bi bi-person-circle"></i><span>Membros</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           
           <li>
             <a href="tables-data.php">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
+              <i class="bi bi-circle"></i><span>Membros Ativos</span>
             </a>
           </li>
         </ul>
@@ -414,7 +417,7 @@ while($aux = mysqli_fetch_assoc($query)) {
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-bar-chart"></i><span>Estatísticas</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>

@@ -20,8 +20,10 @@ $sql = mysqli_query($conecta,$sqlinsert);
 
 
 } else {
+    date_default_timezone_set('America/Sao_Paulo');
+$date = date('d/m-H:i');
 $log=$usuario.' Logado com sucesso';
-    $sqlinsert = "INSERT INTO logs (hora,indice,texto) VALUES ('12 hs', 'text-success','$log')";
+    $sqlinsert = "INSERT INTO logs (hora,indice,texto) VALUES ('$date', 'text-success','$log')";
 $sql = mysqli_query($conecta,$sqlinsert);
     $_SESSION['id'] = $usuario;
 header("location:home.php");
